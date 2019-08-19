@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DNSProxy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <div class="progress transparent hide" top-progress>
+        <div class="indeterminate indigo accent-1"></div>
+    </div>
+    <nav class="indigo lighten-1 sidebar top" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" class="brand-logo hide-on-med-and-down">DNSProxy</a>
+            <ul class="right tabs" tabs-navigation>
+                <li class="tab col s3 right"><a class="waves-effect" href="#settings">Einstellungen</a></li>
+                <li class="tab col s3 right"><a class="waves-effect" href="#list">Listen</a></li>
+                <li class="tab col s3 right"><a class="active waves-effect" href="#querys">Anfragen</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <%- include ./pages/settings.ejs %>
+    <%- include ./pages/querys.ejs %>
+    <%- include ./pages/list.ejs %>
+
+    
+    <script>window.$ = window.jQuery = require('./js/lib/jquery.min.js');</script>
+    <script>window.M = require('./js/lib/materialize.min.js');</script>
+    <script>window.io = require('./js/lib/socket.io.min.js');</script>
+    <script>window.Titlebar = require('./js/lib/titlebar.js');</script>
+
+    <script src="js/main.min.js"></script>
+
+</body>
+</html>

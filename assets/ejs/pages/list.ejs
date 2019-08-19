@@ -1,0 +1,67 @@
+<div id="list" class="section no-pad-bot">
+
+
+    <div class="container row">
+        <nav class="white z-depth-1 waves-effect" style="height: 48px;">
+            <div class="nav-wrapper">
+                <ul class="tabs black-tabs" tabs-lists>
+                    <li class="tab col s6"><a class="waves-effect active" href="#list-black">Blacklist</a></li>
+                    <li class="tab col s6"><a class="waves-effect" href="#list-white">Whitelist</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <% 
+        const lists = ["black", "white"];
+
+        for (const list of lists) {
+    %>
+
+    <div id="list-<%= list %>" class="container">
+
+        <div class="row valign-wrapper">
+            <div class="input-field col s10">
+                <input id="ajsdkasjd-<%= list %>" type="text" class="validate" list-add-input-<%= list %>>
+                <label for="ajsdkasjd-<%= list %>">Übereinstimmung</label>
+                <span class="helper-text">Top-Level-Domain: "^(.*\.eu)$"; Wort in Domain: "^.*(google).*$"</span>
+            </div>
+
+            <div class="col s4">
+                <a class='right dropdown-trigger btn indigo waves-effect' href='#' data-target='list-match-<%= list %>'>
+                    <i class="material-icons right">arrow_drop_down</i>
+                    Hinzufügen zu
+                </a>
+                <ul id='list-match-<%= list %>' class='dropdown-content'>
+                    <li><a list-add-<%= list %> addto="<%= list %>">exakt</a></li>
+                    <li><a list-add-<%= list %> addto="regex<%= list %>">reguläre</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <table class="striped" >
+            <thead>
+                <tr>
+                    <th style="width: 25px;padding: 8px 0 0 20px;">
+                        <label>
+                            <input list-<%= list %>-checkbox-all type="checkbox" />
+                            <span></span>
+                        </label>
+                    </th>
+                    <th>Übereinstimmung</th>
+                    <th>Liste</th>
+                    <th class="right-text">Aktionen</th>
+                </tr>
+            </thead>
+            <tbody list-table-<%= list %>> </tbody>
+        </table>
+        <br><br>
+        <div class="row" >
+            <span>makierte:</span>
+            <a class="btn red waves-effect" list-<%= list %>-btn-delete><i class="material-icons right">delete</i>Löschen</a>
+        </div>
+    </div>
+
+    <% } %>
+
+</div>

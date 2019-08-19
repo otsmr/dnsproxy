@@ -1,0 +1,71 @@
+{
+	"name": "dnsproxy",
+	"version": "1.0.0",
+	"description": "Node DNSProxy",
+	"main": "./src/main.js",
+	"keywords": [
+		"dnsproxy",
+		"windows"
+	],
+	"author": "tsmr",
+	"license": "MIT",
+	"scripts": {
+		"start": "electron .",
+		"pack": "electron-builder --dir",
+		"dist": "electron-builder",
+		"postinstall": "electron-builder install-app-deps"
+	},
+	"build": {
+		"appId": "dnsproxy",
+		"productName": "DNSProxy",
+		"copyright": "Copyright (c) 2019 tsmr",
+		"buildVersion": "1.0.0",
+		"win": {
+			"target": "NSIS",
+			"icon": "./public/img/logo.ico"
+		},
+		"nsis": {
+			"artifactName": "${productName}Setup.${ext}",
+			"uninstallDisplayName": "${productName}"
+		}
+	},
+	"dependencies": {
+		"async": "^1.5.2",
+		"auto-launch": "^5.0.5",
+		"body-parser": "^1.15.0",
+		"chalk": "^2.4.2",
+		"custom-electron-titlebar": "^3.1.0",
+		"express": "^4.13.4",
+		"native-dns": "^0.7.0",
+		"node-notifier": "^5.4.1",
+		"node-watch": "^0.6.3",
+		"open": "^6.4.0",
+		"socket.io": "^2.2.0"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-loader": "^8.0.6",
+		"babel-preset-es2016": "^6.24.1",
+		"babel-preset-latest": "^6.24.1",
+		"custom-electron-titlebar": "^3.1.0",
+		"electron": "^6.0.2",
+		"electron-builder": "^21.2.0",
+		"gulp": "^3.9.0",
+		"gulp-autoprefixer": "^4.1.0",
+		"gulp-babel": "^7.0.1",
+		"gulp-browserify": "^0.5.1",
+		"gulp-clean-css": "^4.0.0",
+		"gulp-concat": "^2.6.0",
+		"gulp-ejs": "^4.1.1",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-minify-css": "^1.2.3",
+		"gulp-plumber": "^1.0.1",
+		"gulp-rename": "^1.2.2",
+		"gulp-sass": "^3.1.0",
+		"gulp-size": "^3.0.0",
+		"gulp-sourcemaps": "^2.6.5",
+		"gulp-uglify-es": "^1.0.4",
+		"moment": "^2.24.0",
+		"socket.io-client": "^2.2.0"
+	}
+}

@@ -1,0 +1,115 @@
+<div id="querys" class="section no-pad-bot">
+    <div class="container row">
+        <nav class="white z-depth-1 waves-effect" style="height: 48px;">
+            <div class="nav-wrapper">
+                <ul class="tabs black-tabs" tabs-querys>
+                    <li class="tab col s6"><a class="waves-effect active" href="#query-live">Live</a></li>
+                    <li class="tab col s6"><a class="waves-effect" href="#query-list">Alle</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <br><br>
+    <div id="query-live" class="container">
+        <div class="row">
+            <div class="col s6">
+                <nav class="white z-depth-1 waves-effect">
+                    <div class="nav-wrapper">
+                        <form>
+                            <div class="input-field">
+                                <input type="search" required query-live-search>
+                                <label class="label-icon"><i class="black-text material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+            <div class="input-field col s3 right">
+                <select query-show-filter>
+                    <option value="all" selected>Alle</option>
+                    <option value="blocked">Blockierte</option>
+                    <option value="notblocket">Nicht Blockierte</option>
+                </select>
+                <label>Filter</label>
+            </div>
+            <div class="input-field col s3 right">
+                <select query-show-max>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="10000000000">Alle</option>
+                </select>
+                <label>Anzeigen</label>
+            </div>
+        </div>
+        <div class="progress">
+            <div class="indeterminate"></div>
+        </div>
+        <ul class="collapsible popout" querys-list> </ul>
+
+    </div>
+    <div id="query-list">
+        <div class="container row valign-wrapper">
+            <div class="col s5">
+                <nav class="white z-depth-1 waves-effect">
+                    <div class="nav-wrapper">
+                        <form>
+                            <div class="input-field">
+                                <input type="search" required query-list-search>
+                                <label class="label-icon"><i class="black-text material-icons">search</i></label>
+                                <i class="material-icons">close</i>
+                            </div>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="input-field col s3 right" style="margin: 0 0 -20px 0;">
+                <select query-list-show-filter>
+                    <option value="all" selected>Alle</option>
+                    <option value="blocked">Blockierte</option>
+                    <option value="notblocked">Nicht Blockierte</option>
+                </select>
+                <label>Filter</label>
+            </div>
+            <div class="input-field col s2 right" style="margin: 0 0 -20px 0;">
+                <select query-list-show-max>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="1000">1000</option>
+                </select>
+                <label>Anzeigen</label>
+            </div>
+            <div class="col s2 right valign-wrapper">
+                <a class='dropdown-trigger btn indigo waves-effect' href='#' data-target='query-list-action'>
+                    <i class="material-icons right">arrow_drop_down</i>
+                    Aktion ausführen
+                    </span>
+                </a>
+
+                <ul id='query-list-action' class='dropdown-content'>
+                    <li><a query-list-reload>Neu laden</a></li>
+                    <li><a query-list-clear>Liste leeren</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+        <table class="striped" style="width: 95%; margin: 0 auto; max-width: 1200px;">
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Domain</th>
+                    <th>Status</th>
+                    <th>Anfragen</th>
+                    <th class="right-text">Aktionen</th>
+                </tr>
+            </thead>
+            <tbody query-list-table></tbody>
+        </table>
+    </div>
+</div>
