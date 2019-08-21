@@ -5,9 +5,6 @@ const fs = require("fs");
 process.env.mypath = app.getPath("userData");
 process.env.exe = app.getPath("exe");
 
-if (!fs.existsSync(process.env.mypath + "/data")) {
-    fs.mkdirSync(process.env.mypath + "/data");
-}
 
 // (name)
 const Tray  = require("./electron/tray");
