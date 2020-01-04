@@ -1,5 +1,5 @@
 # DNSProxy
-Eine einfache Möglichkeit Domains unter **Windows** zu blockieren. Und alle DNS Anfragen mitzuschneiden.
+Eine einfache Möglichkeit Domains unter **Windows** zu blockieren und alle DNS-Anfragen mitzuschneiden.
 
 
 ![block domain](./assets/img/inaction.gif "Domains blockieren")
